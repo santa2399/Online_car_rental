@@ -2,7 +2,7 @@
 // DB credentials.
 define('DB_HOST','carrental.mysql.database.azure.com');
 define('DB_USER','carrental');
-define('DB_PASS','sangeetha@12345');
+define('DB_PASS','sangeetha@123');
 define('DB_NAME','carrental');
 // Establish database connection.
 try
