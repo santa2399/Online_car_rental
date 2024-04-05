@@ -1,8 +1,8 @@
 <?php 
 // DB credentials.
-define('DB_HOST','carrental.mysql.database.azure.com');
-define('DB_USER','carrental');
-define('DB_PASS','sangeetha@123');
+define('DB_HOST','mydbcarrent.mysql.database.azure.com');
+define('DB_USER','sangeetha');
+define('DB_PASS','Azure@123');
 define('DB_NAME','carrental');
 // Establish database connection.
 try
