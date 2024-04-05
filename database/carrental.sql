@@ -1,30 +1,6 @@
--- phpMyAdmin SQL Dump
--- version 4.2.7.1
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Generation Time: Jul 06, 2017 at 08:10 PM
--- Server version: 5.6.20
--- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `carrental`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
 
 CREATE TABLE IF NOT EXISTS `admin` (
 `id` int(11) NOT NULL,
@@ -33,18 +9,11 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `updationDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `admin`
---
+
 
 INSERT INTO `admin` (`id`, `UserName`, `Password`, `updationDate`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '2017-07-05 11:02:08');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tblbooking`
---
 
 CREATE TABLE IF NOT EXISTS `tblbooking` (
 `id` int(11) NOT NULL,
@@ -57,9 +26,6 @@ CREATE TABLE IF NOT EXISTS `tblbooking` (
   `PostingDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
---
--- Dumping data for table `tblbooking`
---
 
 INSERT INTO `tblbooking` (`id`, `userEmail`, `VehicleId`, `FromDate`, `ToDate`, `message`, `Status`, `PostingDate`) VALUES
 (1, 'test@gmail.com', 2, '22/06/2017', '25/06/2017', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco', 1, '2017-06-19 20:15:43'),
@@ -68,11 +34,6 @@ INSERT INTO `tblbooking` (`id`, `userEmail`, `VehicleId`, `FromDate`, `ToDate`, 
 (4, 'test1@gmail.com', 1, '11/07/2017', '12/07/2018', 'ddddddddddd', 0, '2017-06-29 18:20:45'),
 (5, 'php@gmail.com', 6, '11/07/2017', '12/07/2017', 'i want to hire this taxi for few hours', 1, '2017-07-05 11:09:18');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tblbrands`
---
 
 CREATE TABLE IF NOT EXISTS `tblbrands` (
 `id` int(11) NOT NULL,
@@ -80,10 +41,6 @@ CREATE TABLE IF NOT EXISTS `tblbrands` (
   `CreationDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
-
---
--- Dumping data for table `tblbrands`
---
 
 INSERT INTO `tblbrands` (`id`, `BrandName`, `CreationDate`, `UpdationDate`) VALUES
 (1, 'Maruti', '2017-06-18 16:24:34', '2017-06-19 06:42:23'),
@@ -94,11 +51,6 @@ INSERT INTO `tblbrands` (`id`, `BrandName`, `CreationDate`, `UpdationDate`) VALU
 (7, 'Marutiu', '2017-06-19 06:22:13', NULL),
 (8, 'Taxi', '2017-07-05 11:02:29', NULL);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tblcontactusinfo`
---
 
 CREATE TABLE IF NOT EXISTS `tblcontactusinfo` (
 `id` int(11) NOT NULL,
@@ -107,18 +59,10 @@ CREATE TABLE IF NOT EXISTS `tblcontactusinfo` (
   `ContactNo` char(11) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `tblcontactusinfo`
---
 
 INSERT INTO `tblcontactusinfo` (`id`, `Address`, `EmailId`, `ContactNo`) VALUES
 (1, 'Test Demo test demo																									', 'test@test.com', '8585233222');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tblcontactusquery`
---
 
 CREATE TABLE IF NOT EXISTS `tblcontactusquery` (
 `id` int(11) NOT NULL,
@@ -130,18 +74,12 @@ CREATE TABLE IF NOT EXISTS `tblcontactusquery` (
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `tblcontactusquery`
---
+
 
 INSERT INTO `tblcontactusquery` (`id`, `name`, `EmailId`, `ContactNumber`, `Message`, `PostingDate`, `status`) VALUES
 (1, 'Anuj Kumar', 'webhostingamigo@gmail.com', '2147483647', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '2017-06-18 10:03:07', 1);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `tblpages`
---
 
 CREATE TABLE IF NOT EXISTS `tblpages` (
 `id` int(11) NOT NULL,
@@ -150,9 +88,6 @@ CREATE TABLE IF NOT EXISTS `tblpages` (
   `detail` longtext NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
---
--- Dumping data for table `tblpages`
---
 
 INSERT INTO `tblpages` (`id`, `PageName`, `type`, `detail`) VALUES
 (1, 'Terms and Conditions', 'terms', '<P align=justify><FONT size=2><STRONG><FONT color=#990000>(1) ACCEPTANCE OF TERMS</FONT><BR><BR></STRONG>Welcome to Yahoo! India. 1Yahoo Web Services India Private Limited Yahoo", "we" or "us" as the case may be) provides the Service (defined below) to you, subject to the following Terms of Service ("TOS"), which may be updated by us from time to time without notice to you. You can review the most current version of the TOS at any time at: <A href="http://in.docs.yahoo.com/info/terms/">http://in.docs.yahoo.com/info/terms/</A>. In addition, when using particular Yahoo services or third party services, you and Yahoo shall be subject to any posted guidelines or rules applicable to such services which may be posted from time to time. All such guidelines or rules, which maybe subject to change, are hereby incorporated by reference into the TOS. In most cases the guides and rules are specific to a particular part of the Service and will assist you in applying the TOS to that part, but to the extent of any inconsistency between the TOS and any guide or rule, the TOS will prevail. We may also offer other services from time to time that are governed by different Terms of Services, in which case the TOS do not apply to such other services if and to the extent expressly excluded by such different Terms of Services. Yahoo also may offer other services from time to time that are governed by different Terms of Services. These TOS do not apply to such other services that are governed by different Terms of Service. </FONT></P>\r\n<P align=justify><FONT size=2>Welcome to Yahoo! India. Yahoo Web Services India Private Limited Yahoo", "we" or "us" as the case may be) provides the Service (defined below) to you, subject to the following Terms of Service ("TOS"), which may be updated by us from time to time without notice to you. You can review the most current version of the TOS at any time at: </FONT><A href="http://in.docs.yahoo.com/info/terms/"><FONT size=2>http://in.docs.yahoo.com/info/terms/</FONT></A><FONT size=2>. In addition, when using particular Yahoo services or third party services, you and Yahoo shall be subject to any posted guidelines or rules applicable to such services which may be posted from time to time. All such guidelines or rules, which maybe subject to change, are hereby incorporated by reference into the TOS. In most cases the guides and rules are specific to a particular part of the Service and will assist you in applying the TOS to that part, but to the extent of any inconsistency between the TOS and any guide or rule, the TOS will prevail. We may also offer other services from time to time that are governed by different Terms of Services, in which case the TOS do not apply to such other services if and to the extent expressly excluded by such different Terms of Services. Yahoo also may offer other services from time to time that are governed by different Terms of Services. These TOS do not apply to such other services that are governed by different Terms of Service. </FONT></P>\r\n<P align=justify><FONT size=2>Welcome to Yahoo! India. Yahoo Web Services India Private Limited Yahoo", "we" or "us" as the case may be) provides the Service (defined below) to you, subject to the following Terms of Service ("TOS"), which may be updated by us from time to time without notice to you. You can review the most current version of the TOS at any time at: </FONT><A href="http://in.docs.yahoo.com/info/terms/"><FONT size=2>http://in.docs.yahoo.com/info/terms/</FONT></A><FONT size=2>. In addition, when using particular Yahoo services or third party services, you and Yahoo shall be subject to any posted guidelines or rules applicable to such services which may be posted from time to time. All such guidelines or rules, which maybe subject to change, are hereby incorporated by reference into the TOS. In most cases the guides and rules are specific to a particular part of the Service and will assist you in applying the TOS to that part, but to the extent of any inconsistency between the TOS and any guide or rule, the TOS will prevail. We may also offer other services from time to time that are governed by different Terms of Services, in which case the TOS do not apply to such other services if and to the extent expressly excluded by such different Terms of Services. Yahoo also may offer other services from time to time that are governed by different Terms of Services. These TOS do not apply to such other services that are governed by different Terms of Service. </FONT></P>'),
@@ -160,11 +95,7 @@ INSERT INTO `tblpages` (`id`, `PageName`, `type`, `detail`) VALUES
 (3, 'About Us ', 'aboutus', '<span style="color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat</span>'),
 (11, 'FAQs', 'faqs', '																														<span style="color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;">Address------Test &nbsp; &nbsp;dsfdsfds</span>');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `tblsubscribers`
---
 
 CREATE TABLE IF NOT EXISTS `tblsubscribers` (
 `id` int(11) NOT NULL,
@@ -172,18 +103,10 @@ CREATE TABLE IF NOT EXISTS `tblsubscribers` (
   `PostingDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `tblsubscribers`
---
 
 INSERT INTO `tblsubscribers` (`id`, `SubscriberEmail`, `PostingDate`) VALUES
 (1, 'anuj.lpu1@gmail.com', '2017-06-22 16:35:32');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbltestimonial`
---
 
 CREATE TABLE IF NOT EXISTS `tbltestimonial` (
 `id` int(11) NOT NULL,
@@ -193,20 +116,13 @@ CREATE TABLE IF NOT EXISTS `tbltestimonial` (
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
---
--- Dumping data for table `tbltestimonial`
---
+
 
 INSERT INTO `tbltestimonial` (`id`, `UserEmail`, `Testimonial`, `PostingDate`, `status`) VALUES
 (1, 'test@gmail.com', 'Test Test', '2017-06-18 07:44:31', 1),
 (2, 'test@gmail.com', '\nLorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilis', '2017-06-18 07:46:05', 1),
 (3, 'php@gmail.com', 'Wow its Great ', '2017-07-05 11:08:26', NULL);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tblusers`
---
 
 CREATE TABLE IF NOT EXISTS `tblusers` (
 `id` int(11) NOT NULL,
@@ -222,9 +138,6 @@ CREATE TABLE IF NOT EXISTS `tblusers` (
   `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
---
--- Dumping data for table `tblusers`
---
 
 INSERT INTO `tblusers` (`id`, `FullName`, `EmailId`, `Password`, `ContactNo`, `dob`, `Address`, `City`, `Country`, `RegDate`, `UpdationDate`) VALUES
 (1, 'Anuj Kumar', 'demo@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2147483647', NULL, NULL, NULL, NULL, '2017-06-17 19:59:27', '2017-06-26 21:02:58'),
@@ -234,11 +147,7 @@ INSERT INTO `tblusers` (`id`, `FullName`, `EmailId`, `Password`, `ContactNo`, `d
 (5, 'test', 'test1@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '9015501898', NULL, NULL, NULL, NULL, '2017-06-29 18:19:08', NULL),
 (6, 'php', 'php@gmail.com', '202cb962ac59075b964b07152d234b70', '9015501898', NULL, NULL, NULL, NULL, '2017-07-05 11:06:55', '2017-07-05 11:08:02');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `tblvehicles`
---
 
 CREATE TABLE IF NOT EXISTS `tblvehicles` (
 `id` int(11) NOT NULL,
@@ -270,9 +179,7 @@ CREATE TABLE IF NOT EXISTS `tblvehicles` (
   `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
---
--- Dumping data for table `tblvehicles`
---
+
 
 INSERT INTO `tblvehicles` (`id`, `VehiclesTitle`, `VehiclesBrand`, `VehiclesOverview`, `PricePerDay`, `FuelType`, `ModelYear`, `SeatingCapacity`, `Vimage1`, `Vimage2`, `Vimage3`, `Vimage4`, `Vimage5`, `AirConditioner`, `PowerDoorLocks`, `AntiLockBrakingSystem`, `BrakeAssist`, `PowerSteering`, `DriverAirbag`, `PassengerAirbag`, `PowerWindows`, `CDPlayer`, `CentralLocking`, `CrashSensor`, `LeatherSeats`, `RegDate`, `UpdationDate`) VALUES
 (1, 'ytb rvtr', 2, 'vtretrvet', 345345, 'Petrol', 3453, 7, 'knowledge_base_bg.jpg', '20170523_145633.jpg', 'phpgurukul-1.png', 'social-icons.png', '', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2017-06-19 11:46:23', '2017-06-20 18:38:13'),
@@ -282,55 +189,29 @@ INSERT INTO `tblvehicles` (`id`, `VehiclesTitle`, `VehiclesBrand`, `VehiclesOver
 (5, 'ytb rvtr', 5, 'vtretrvet', 345345, 'Petrol', 3453, 7, 'car_755x430.png', NULL, NULL, NULL, NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2017-06-20 17:57:09', '2017-06-21 16:56:43'),
 (6, 'Waganor Taxi', 8, 'Its Well matintaied', 10, 'Petrol', 2017, 4, 'Koala.jpg', 'Desert.jpg', 'Hydrangeas.jpg', 'Jellyfish.jpg', '', 1, 1, 1, NULL, 1, 1, NULL, 1, 1, 1, NULL, 1, '2017-07-05 11:04:18', NULL);
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `admin`
---
 ALTER TABLE `admin`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `tblbooking`
---
 ALTER TABLE `tblbooking`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `tblbrands`
---
 ALTER TABLE `tblbrands`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `tblcontactusinfo`
---
+
 ALTER TABLE `tblcontactusinfo`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `tblcontactusquery`
---
 ALTER TABLE `tblcontactusquery`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `tblpages`
---
 ALTER TABLE `tblpages`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `tblsubscribers`
---
 ALTER TABLE `tblsubscribers`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `tbltestimonial`
---
 ALTER TABLE `tbltestimonial`
  ADD PRIMARY KEY (`id`);
 
@@ -340,66 +221,39 @@ ALTER TABLE `tbltestimonial`
 ALTER TABLE `tblusers`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `tblvehicles`
---
+
 ALTER TABLE `tblvehicles`
  ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `admin`
---
+
+
 ALTER TABLE `admin`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `tblbooking`
---
+
 ALTER TABLE `tblbooking`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `tblbrands`
---
+
 ALTER TABLE `tblbrands`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `tblcontactusinfo`
---
+
 ALTER TABLE `tblcontactusinfo`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `tblcontactusquery`
---
+
 ALTER TABLE `tblcontactusquery`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `tblpages`
---
+
 ALTER TABLE `tblpages`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
---
--- AUTO_INCREMENT for table `tblsubscribers`
---
+
 ALTER TABLE `tblsubscribers`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `tbltestimonial`
---
+
 ALTER TABLE `tbltestimonial`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `tblusers`
---
+
 ALTER TABLE `tblusers`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `tblvehicles`
---
+
 ALTER TABLE `tblvehicles`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
