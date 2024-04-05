@@ -43,7 +43,7 @@ error:function (){}
 }
 </script>
 <script type="text/javascript">
-function valid()
+function val()
 {
 if(document.signup.password.value!= document.signup.confirmpassword.value)
 {
