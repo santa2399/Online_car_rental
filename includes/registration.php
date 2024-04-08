@@ -65,7 +65,7 @@ return true;
         <div class="row">
           <div class="signup_wrap">
             <div class="col-md-12 col-sm-6">
-              <form  method="post" name="signup" onSubmit="return valid();">
+              <form  method="post" name="signup">
                 <div class="form-group">
                   <input type="text" class="form-control" name="fullname" placeholder="Full Name" required="required">
                 </div>
