@@ -1,9 +1,9 @@
 <?php 
 // DB credentials.
-define('DB_HOST','mydbcarrent.mysql.database.azure.com');
+define('DB_HOST','mydb123.mysql.database.azure.com');
 define('DB_USER','sangeetha');
-define('DB_PASS','Azure@123');
-define('DB_NAME','sk2');
+define('DB_PASS','Azureuser@12345');
+define('DB_NAME','sk');
 // Establish database connection.
 try {
     $dbh = new PDO(
